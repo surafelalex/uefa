@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.uefa-header { width: 100%; }
+.top-bar { background-color: #0e1a2d; color: #ffffff; padding: 8px 0; font-size: 0.85rem; }
+.top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.competition-logos { display: flex; align-items: center; flex-wrap: wrap; }
+.competition-logos .logo { margin-right: 15px; margin-bottom: 5px; display: inline-block; width: 25px; height: 25px; border-radius: 50%; overflow: hidden; vertical-align: middle; line-height: 25px; text-align: center; }
+.competition-logos .logo:first-child { background-color: transparent; font-size: 1.4em; width: auto; height: auto; overflow: visible; border-radius: 0; line-height: 1; }
+.competition-logos .logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.top-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 15px; }
+.top-nav a { color: #ffffff; text-decoration: none; transition: color 0.3s ease; white-space: nowrap; }
+.top-nav a:hover { color: #cccccc; }
+.top-nav a i { margin-left: 5px; font-size: 0.8em; }
+.top-nav a:last-child i { margin-right: 5px; margin-left: 0; font-size: 1em; }
+.top-nav .dropdown-link i { font-size: 0.7em; vertical-align: middle; }
+.main-nav { background-color: #0050a0; color: #ffffff; position: relative; }
+.main-nav-content { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; min-height: 60px; }
+.uefa-logo { font-size: 1.8rem; font-weight: bold; color: #ffffff; text-decoration: none; text-transform: uppercase; }
+.nav-links { list-style: none; display: flex; padding-left: 0; align-items: center; }
+.nav-links li { margin-left: 25px; }
+.nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 5px 0; white-space: nowrap; }
+.nav-links a.active { font-weight: bold; }
+.nav-links a:hover { color: #dddddd; }
+#hamburger-button { display: none; background: none; border: none; color: #ffffff; font-size: 1.8rem; cursor: pointer; padding: 5px; }
+
+
+.page-title-area {
+    background-color: #051021;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    position: relative;
+    color: #ffffff;
+}
+
+.page-title-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.title-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.page-title-area h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+main {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #0050a0;
+}
+
+main .section-intro {
+   text-align: center;
+   margin-bottom: 40px;
+   color: #555;
+   max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 280px;
+     padding-left: 20px;
+     border-left: 3px solid #0050a0;
+}
+
+.contact-form h3, .contact-details h3 {
+     margin-bottom: 20px;
+     font-size: 1.5rem;
+     color: #333;
+ }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0050a0;
+    box-shadow: 0 0 0 2px rgba(0, 80, 160, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group button[type="submit"] {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #0e1a2d;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+.contact-details p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-info-item i {
+    font-size: 1.2rem;
+    color: #0050a0;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+ .contact-info-item span {
+     line-height: 1.6;
+ }
+
+.site-footer {
+    background-color: #0e1a2d;
+    color: #aaa;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; text-align: center; }
+.footer-content > * { flex-basis: 100%; }
+@media (min-width: 768px) {
+     .footer-content > * { flex-basis: auto; }
+     .footer-content { text-align: left; }
+}
+.footer-content p { margin: 0; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px 15px; }
+.footer-nav a { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
+.footer-nav a:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+    .top-bar-content { flex-direction: column; align-items: center; gap: 15px; }
+    .competition-logos, .top-nav { justify-content: center; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: #004184; flex-direction: column; align-items: stretch; padding: 0; z-index: 1000; border-top: 1px solid #0e1a2d; }
+    .nav-links.active { display: flex; }
+    .nav-links li { margin-left: 0; width: 100%; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a { display: block; padding: 15px 20px; width: 100%; }
+    .nav-links a:hover { background-color: rgba(255, 255, 255, 0.05); color: #ffffff; }
+    #hamburger-button { display: block; }
+
+    .page-title-area h1 { font-size: 2.2rem; }
+    .title-content { justify-content: center; }
+
+    main { padding: 40px 0; }
+    main h2 { font-size: 1.8rem; }
+     main .section-intro { padding: 0 10px; }
+
+    .contact-wrapper {
+         flex-direction: column;
+         gap: 30px;
+    }
+     .contact-details {
+         border-left: none;
+         padding-left: 0;
+         border-top: 3px solid #0050a0;
+         padding-top: 30px;
+     }
+
+    .footer-content { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .competition-logos .logo { width: 20px; height: 20px; margin-right: 10px; }
+    .uefa-logo { font-size: 1.5rem; }
+    .top-bar { font-size: 0.8rem; }
+    .main-nav-content { min-height: 50px; }
+    #hamburger-button { font-size: 1.6rem; }
+    .nav-links a { padding: 12px 15px; }
+
+    .page-title-area h1 { font-size: 1.8rem; }
+
+    main { padding: 30px 0; }
+    main h2 { font-size: 1.6rem; }
+    .contact-form { padding: 20px; }
+    .form-group button[type="submit"] { width: 100%; }
+
+}
+
+.competition-logos .logo:not(:first-child) i {
+    font-size: 0.9em;
+    line-height: 25px;
+    vertical-align: middle;
+    color: #ffffff;
+}

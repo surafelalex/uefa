@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football News - UEFA Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="uefa-header">
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="competition-logos">
+                    <span class="logo"><i class="fas fa-futbol"></i></span>
+                    <span class="logo"><i class="fas fa-trophy"></i></span>
+                    <span class="logo"><i class="fas fa-star"></i></span>
+                    <span class="logo"><i class="fas fa-crown"></i></span>
+                    <span class="logo"><i class="fas fa-flag-checkered"></i></span>
+                    <span class="logo"><i class="fas fa-medal"></i></span>
+                 </div>
+                <nav class="top-nav">
+                    <a href="" class="dropdown-link">All competitions <i class="fas fa-chevron-down"></i></a>
+                    <a href="">UEFA.tv</a>
+                    <a href="">UEFA GAMING</a>
+                    <a href=""><i class="fas fa-shopping-bag"></i> Store</a>
+                </nav>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container main-nav-content">
+                <a href="/" class="uefa-logo">UEFA.com</a>
+                <button id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="main-nav-links">
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                    <li><a href="../news/" >News</a></li>
+                    <li><a href="../privacy/">Privacy</a></li>
+                    <li><a href="../terms/" class="active">Terms</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="page-title-area">
+            <div class="container title-content">
+                <h1>Football News</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="news-article">
+                <h3><a href="#">Major Transfer Rumor Shakes Premier League</a></h3>
+                <div class="news-meta">Published on: October 27, 2023 | Category: Transfers</div>
+                <div class="article-content">
+                    <p>Speculation is mounting around a potential blockbuster move involving one of the league's top strikers. Sources close to the club suggest negotiations are ongoing regarding a record-breaking fee and personal terms. Fans are eagerly awaiting confirmation as the transfer window deadline approaches rapidly. This move could significantly alter the balance of power in the league.</p>
+                </div>
+                <a href="#" class="read-more-link">Read More »</a>
+            </article>
+
+            <article class="news-article">
+                <h3><a href="#">Champions League Midweek Action: Key Results</a></h3>
+                 <div class="news-meta">Published on: October 26, 2023 | Category: Match Reports</div>
+                 <div class="article-content">
+                    <p>A night of thrilling football saw several surprising results across Europe. We break down the key moments, standout performances, and implications for the group stages. Goals flew in late in several matches, leading to dramatic shifts in group standings. One particular upset has thrown Group C wide open, setting the stage for a tense final matchday.</p>
+                 </div>
+                <a href="#" class="read-more-link">Read More »</a>
+            </article>
+
+            <article class="news-article">
+                <h3><a href="#">Manager Press Conference Highlights: Injury Updates and Tactical Insights</a></h3>
+                 <div class="news-meta">Published on: October 25, 2023 | Category: Press Conferences</div>
+                 <div class="article-content">
+                     <p>Get the latest updates directly from the managers as they address the media ahead of this weekend's crucial league fixtures. Key player availability and tactical approaches discussed. One manager hinted at a potential formation change, while another confirmed a long-term injury layoff for a star player, impacting their upcoming European campaign.</p>
+                 </div>
+                <a href="#" class="read-more-link">Read More »</a>
+            </article>
+
+             <article class="news-article">
+                <h3><a href="#">Analysis: The Rise of Young Talent in La Liga</a></h3>
+                 <div class="news-meta">Published on: October 24, 2023 | Category: Opinion & Analysis</div>
+                 <div class="article-content">
+                    <p>This season has seen an exceptional crop of young players making their mark in Spain's top flight. We analyze the impact of these rising stars and what it means for the future of both their clubs and the national team. Several teenagers are already commanding starting positions and attracting attention from Europe's elite clubs.</p>
+                 </div>
+                <a href="#" class="read-more-link">Read More »</a>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+           <p>© 2023 UEFA Example Site. All rights reserved.</p>
+           <nav class="footer-nav">
+               <a href="../privacy/">Privacy Policy</a>
+               <a href="../terms/">Terms & Conditions</a>
+           </nav>
+       </div>
+   </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const navLinks = document.getElementById('main-nav-links');
+
+            if (hamburgerButton && navLinks) {
+                hamburgerButton.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    const isExpanded = navLinks.classList.contains('active');
+                    hamburgerButton.setAttribute('aria-expanded', isExpanded);
+                     const icon = hamburgerButton.querySelector('i');
+                     if (isExpanded) {
+                         icon.classList.remove('fa-bars');
+                         icon.classList.add('fa-times');
+                     } else {
+                         icon.classList.remove('fa-times');
+                         icon.classList.add('fa-bars');
+                     }
+                });
+            }
+
+            const readMoreLinks = document.querySelectorAll('.read-more-link');
+
+            readMoreLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+
+                    const article = link.closest('.news-article');
+                    if (article) {
+                        const content = article.querySelector('.article-content');
+                        if (content) {
+                            content.classList.toggle('expanded');
+                            if (content.classList.contains('expanded')) {
+                                link.textContent = 'Read Less «';
+                            } else {
+                                link.textContent = 'Read More »';
+                            }
+                        }
+                    }
+                });
+
+                 const article = link.closest('.news-article');
+                 if(article){
+                    const content = article.querySelector('.article-content');
+                    if(content && content.scrollHeight <= content.clientHeight + 5) {
+                    }
+                 }
+            });
+        });
+        const copyrightElement = document.querySelector('.site-footer p');
+
+           if (copyrightElement) {
+            const currentYear = new Date().getFullYear();
+             copyrightElement.textContent = `© ${currentYear} UEFA Example Site. All rights reserved.`;
+            } else {
+            console.warn("Copyright element not found in footer.");
+           }
+    </script>
+
+</body>
+</html>

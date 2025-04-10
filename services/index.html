@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - UEFA Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="uefa-header">
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="competition-logos">
+                    <span class="logo"><i class="fas fa-futbol"></i></span>
+                    <span class="logo"><i class="fas fa-trophy"></i></span>
+                    <span class="logo"><i class="fas fa-star"></i></span>
+                    <span class="logo"><i class="fas fa-crown"></i></span>
+                    <span class="logo"><i class="fas fa-flag-checkered"></i></span>
+                    <span class="logo"><i class="fas fa-medal"></i></span>
+                 </div>
+                <nav class="top-nav">
+                    <a href="" class="dropdown-link">All competitions <i class="fas fa-chevron-down"></i></a>
+                    <a href="">UEFA.tv</a>
+                    <a href="">UEFA GAMING</a>
+                    <a href=""><i class="fas fa-shopping-bag"></i> Store</a>
+                </nav>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container main-nav-content">
+                <a href="/" class="uefa-logo">UEFA.com</a>
+                <button id="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="main-nav-links">
+                    <li><a href="../about/">About</a></li>
+                    <li><a href="../services/">Services</a></li>
+                    <li><a href="../contact/">Contact</a></li>
+                    <li><a href="../news/" >News</a></li>
+                    <li><a href="../privacy/">Privacy</a></li>
+                    <li><a href="../terms/" class="active">Terms</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="page-title-area">
+            <div class="container title-content">
+                <h1>Our Services</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="service-section">
+                <h2>Competitions</h2>
+                <p>UEFA organises some of the most prestigious and popular competitions in world football, uniting fans, players, and clubs across Europe.</p>
+                <h3>Key Competitions Include:</h3>
+                <ul>
+                    <li>UEFA Champions League</li>
+                    <li>UEFA Europa League</li>
+                    <li>UEFA Conference League</li>
+                    <li>UEFA European Championship (EURO)</li>
+                    <li>UEFA Nations League</li>
+                    <li>UEFA Women's Champions League</li>
+                    <li>UEFA Women's EURO</li>
+                </ul>
+                <p>We manage all aspects from qualification draws and match scheduling to finals organisation and trophy presentations.</p>
+                <a href="" class="service-link">Explore Competitions <i class="fas fa-arrow-right"></i></a>
+            </section>
+
+            <section class="service-section">
+                <h2>Media & Broadcasting</h2>
+                <p>Bringing the excitement of European football to a global audience through cutting-edge media services and broadcast partnerships.</p>
+                <h3>Our Media Offerings:</h3>
+                <ul>
+                    <li>Live streaming and on-demand content via UEFA.tv</li>
+                    <li>Comprehensive match statistics and live data feeds</li>
+                    <li>Official photography and video archives</li>
+                    <li>Media accreditation for journalists and broadcasters</li>
+                    <li>Distribution of international broadcast rights</li>
+                </ul>
+                 <a href="" class="service-link">Visit UEFA.tv <i class="fas fa-tv"></i></a>
+            </section>
+
+            <section class="service-section">
+                <h2>Football Development</h2>
+                <p>Investing in the future of the game through programs aimed at grassroots football, coach education, and elite youth player development.</p>
+                 <h3>Development Initiatives:</h3>
+                <ul>
+                    <li>UEFA Grassroots Programme promoting participation for all</li>
+                    <li>Coach Education Diplomas (Pro, A, B Licences)</li>
+                    <li>Elite Youth Player Development schemes</li>
+                    <li>Referee development and training courses</li>
+                    <li>Social responsibility projects using football for good</li>
+                </ul>
+                 <a href="" class="service-link">Learn About Development <i class="fas fa-graduation-cap"></i></a>
+            </section>
+
+             <section class="service-section">
+                <h2>Fan Engagement & Digital Platforms</h2>
+                <p>Connecting with fans worldwide through interactive digital experiences, gaming, and official merchandise.</p>
+                 <h3>Engage With UEFA:</h3>
+                <ul>
+                    <li>Official UEFA Gaming platforms (Fantasy Football, Predictor)</li>
+                    <li>Ticketing information and sales for major events</li>
+                    <li>Online store for official merchandise and apparel</li>
+                    <li>Social media channels for news and interaction</li>
+                    <li>Mobile applications for live updates and content</li>
+                </ul>
+                 <a href="" class="service-link">UEFA Gaming Hub <i class="fas fa-gamepad"></i></a>
+                 <a href="" class="service-link" style="margin-left: 10px;">Official Store <i class="fas fa-shopping-bag"></i></a>
+            </section>
+
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-content">
+           <p>© 2023 UEFA Example Site. All rights reserved.</p>
+           <nav class="footer-nav">
+               <a href="../privacy/">Privacy Policy</a>
+               <a href="../terms/">Terms & Conditions</a>
+           </nav>
+       </div>
+   </footer>
+
+    <script>
+        const copyrightElement = document.querySelector('.site-footer p');
+        if (copyrightElement) {
+         const currentYear = new Date().getFullYear();
+         copyrightElement.textContent = `© ${currentYear} UEFA. All rights reserved.`; // Removed 'Example Site.' to match other pages
+        } else {
+        console.warn("Copyright element not found in footer.");
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const navLinks = document.getElementById('main-nav-links');
+
+            if (hamburgerButton && navLinks) {
+                hamburgerButton.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    const isExpanded = navLinks.classList.contains('active');
+                    hamburgerButton.setAttribute('aria-expanded', isExpanded);
+                     const icon = hamburgerButton.querySelector('i');
+                     if (isExpanded) {
+                         icon.classList.remove('fa-bars');
+                         icon.classList.add('fa-times');
+                     } else {
+                         icon.classList.remove('fa-times');
+                         icon.classList.add('fa-bars');
+                     }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
